@@ -1,0 +1,65 @@
+# GraphQL-схема client-info (эквивалент Swagger 2.0, basePath /v1)
+# REST: GET /clients/{id}, GET /clients/{id}/documents, GET /clients/{id}/relatives
+
+"""
+Корневой тип запросов. Один запрос с вложенными полями заменяет несколько REST-вызовов
+(например: client(id) { name documents { type } relatives { name } }).
+"""
+type Query {
+  """
+  Эквивалент GET /clients/{id}.
+  Поля documents и relatives запрашиваются только если указаны в selection set.
+  """
+  client(id: ID!): Client
+
+  """
+  Эквивалент GET /clients/{id}/documents — отдельная операция для совместимости с REST-семантикой.
+  """
+  clientDocuments(clientId: ID!): [Document!]!
+
+  """
+  Эквивалент GET /clients/{id}/relatives.
+  """
+  clientRelatives(clientId: ID!): [Relative!]!
+}
+
+"""
+Соответствует определению Client в Swagger.
+"""
+type Client {
+  id: ID!
+  name: String
+  age: Int
+
+  """Связанные документы (ленивое разрешение на бэкенде)."""
+  documents: [Document!]!
+
+  """Связанные."""
+  relatives: [Relative!]!
+}
+
+"""
+Соответствует определению Document в Swagger.
+Даты в исходном API — string; при миграции можно заменить на scalar Date.
+"""
+type Document {
+  id: ID!
+  type: String
+  number: String
+  issueDate: String
+  expiryDate: String
+}
+
+"""
+Соответствует определению Relative в Swagger.
+"""
+type Relative {
+  id: ID!
+  relationType: String
+  name: String
+  age: Int
+}
+
+# Примеры запросов (для документации; не часть executable schema):
+# query OneRoundTrip($id: ID!) { client(id: $id) { id name age documents { id type } relatives { id name } } }
+# query DocsOnly($clientId: ID!) { clientDocuments(clientId: $clientId) { id type number } }
