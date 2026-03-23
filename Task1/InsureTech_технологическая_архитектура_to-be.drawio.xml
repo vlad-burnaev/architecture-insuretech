@@ -1,0 +1,207 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 YaBrowser/25.12.0.0 Safari/537.36" version="29.6.4">
+  <diagram name="to-be" id="insuretech-tobe-arch-v2">
+    <mxGraphModel dx="2244" dy="1476" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="v2-tobe-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" value="&lt;b&gt;InsureTech — to-be&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot;&gt;Yandex Cloud, мультирегион РФ&lt;/font&gt;" vertex="1">
+          <mxGeometry height="48" width="520" x="40" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-slo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;" value="&lt;b&gt;Целевые показатели&lt;/b&gt;&lt;br&gt;Доступность: &lt;b&gt;99,9%&lt;/b&gt; (multi-AZ + geo)&lt;br&gt;RTO: &lt;b&gt;≤ 45 мин&lt;/b&gt; · RPO: &lt;b&gt;≤ 15 мин&lt;/b&gt;&lt;br&gt;Масштабирование:&amp;nbsp;&lt;div&gt;&lt;b&gt;- горизонтальное&lt;/b&gt; (реплики подов, пулы нод, HPA) как основной способ;&lt;br&gt;&lt;b&gt;- вертикальное&lt;/b&gt; — для БД и пиков;&amp;nbsp;&lt;/div&gt;&lt;div&gt;Отдельные &lt;b&gt;зоны безопасности&lt;/b&gt;: public (ALB), private (K8s/сервисы), data (БД).&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="520" x="600" y="16" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-user-b2c" parent="1" style="verticalAlign=middle;align=center;overflow=width;vsdxID=5;fillColor=none;gradientColor=none;shape=stencil(vVPLEoIgFP0aljgEVuPa6j+YRGUica6U9vdhUKk4LWzG3X0cOPdcOIilTclrgShpDOiLaGVmSsQOiFJZlQKksRFiR8TSXIMoQN+qzOU175F9dNX3/obOnSP9CUoeLktIFL8KJ4flcLZN8NhtRJiDwxsf7VwhQHjAhniCDvNONhi04UbqakSuOBQCWy6cK16MWk0rRB2U/XRKVgMlSRwl+1nyhWI+s0+Xs4KYgNvPtlBKuJvVniX4En+9yfxWVpDx2yc2+Bosl0o5fw77U0PakjMzOz4B);strokeColor=#ff5958;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Браузер пользователя (B2C)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="180" x="115" y="162" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-user-b2b" parent="1" style="verticalAlign=middle;align=center;overflow=width;vsdxID=5;fillColor=none;gradientColor=none;shape=stencil(vVPLEoIgFP0aljgEVuPa6j+YRGUica6U9vdhUKk4LWzG3X0cOPdcOIilTclrgShpDOiLaGVmSsQOiFJZlQKksRFiR8TSXIMoQN+qzOU175F9dNX3/obOnSP9CUoeLktIFL8KJ4flcLZN8NhtRJiDwxsf7VwhQHjAhniCDvNONhi04UbqakSuOBQCWy6cK16MWk0rRB2U/XRKVgMlSRwl+1nyhWI+s0+Xs4KYgNvPtlBKuJvVniX4En+9yfxWVpDx2yc2+Bosl0o5fw77U0PakjMzOz4B);strokeColor=#ff5958;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;" value="Партнёр (B2B API)" vertex="1">
+          <mxGeometry height="100" width="180" x="1470" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-cdn" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;verticalAlign=middle;fontSize=12;" value="&lt;b&gt;Yandex Cloud CDN&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Статика SPA, кэш на edge — равное время загрузки по регионам РФ&lt;/font&gt;" vertex="1">
+          <mxGeometry height="88" width="280" x="360" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-alb" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff4cc;strokeColor=#d6b656;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;fontSize=11;" value="&lt;b&gt;Application Load Balancer&lt;/b&gt; (L7, Yandex Cloud)&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Гео/весовая маршрутизация между регионами&lt;br&gt;&lt;b&gt;Health check ALB:&lt;/b&gt; HTTP GET /health, интервал, пороги unhealthy&lt;br&gt;&lt;b&gt;Health check подов:&lt;/b&gt; readiness + liveness в Kubernetes&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="390" x="700" y="152" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-edge1" edge="1" parent="1" source="v2-tobe-user-b2c" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=classic;startArrow=none;" target="v2-tobe-cdn">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-edge2" edge="1" parent="1" source="v2-tobe-cdn" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=classic;startArrow=none;" target="v2-tobe-alb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-region1" parent="1" style="verticalAlign=top;align=left;overflow=width;vsdxID=5;fillColor=#e3ebff;gradientColor=none;shape=stencil(vVNBDsIgEHwNRwxCjHqu+g9iaUtEaBa09fdSwdpi9dBDb8vOwOwsGcQyW/FaIEqsA3MRjcxdhdgBUSp1JUA6XyF2RCwrDIgSzE3n4VzzjtlVV3PvXmjDPdLdoOQRTrvtavNqnAKXw9mDELkBIhDJaxrJZIy/YRLfbjFvpcVgHHfS6JGu4lAK7GVwoXg5gmwjRP3VjoMpqQcm9tPKs0z0Y6crWcBHqt0PN8tJspXFfmNKdpaBH8tYwML/VPjiE6dCKhXSOMTT+PlWiC47PgE=);strokeColor=none;spacingTop=8;spacingBottom=-3;spacingLeft=8;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;" value="&lt;b&gt;Регион 1 (основной)&lt;/b&gt;&lt;br&gt;Несколько &lt;b&gt;зон доступности&lt;/b&gt; внутри региона" vertex="1">
+          <mxGeometry height="560" width="1040" x="40" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-region2" parent="1" style="verticalAlign=top;align=left;overflow=width;vsdxID=5;fillColor=#e3ebff;gradientColor=none;shape=stencil(vVNBDsIgEHwNRwxCjHqu+g9iaUtEaBa09fdSwdpi9dBDb8vOwOwsGcQyW/FaIEqsA3MRjcxdhdgBUSp1JUA6XyF2RCwrDIgSzE3n4VzzjtlVV3PvXmjDPdLdoOQRTrvtavNqnAKXw9mDELkBIhDJaxrJZIy/YRLfbjFvpcVgHHfS6JGu4lAK7GVwoXg5gmwjRP3VjoMpqQcm9tPKs0z0Y6crWcBHqt0PN8tJspXFfmNKdpaBH8tYwML/VPjiE6dCKhXSOMTT+PlWiC47PgE=);strokeColor=none;spacingTop=8;spacingBottom=-3;spacingLeft=8;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;" value="&lt;b&gt;Регион 2 (активный резерв / масштаб)&lt;/b&gt;&lt;br&gt;Независимый кластер, тот же набор сервисов" vertex="1">
+          <mxGeometry height="560" width="1040" x="1120" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-k8s-1-outline" parent="1" style="vsdxID=6;fillColor=none;gradientColor=none;shape=stencil(vVNdD4IgFP01POIQms1nq//BEpVF4q6U9u/DoFJxPdjm2/04cO65cBDL2oo3AlHSGtAX0cncVIgdEKWyrgRIYyPEjohlhQZRgr7VucsbPiCH6Krvww29O0eGE5Q8XJaSaPcqnByWw9k2wWNZRFMHhzc+SlwhQHhATDxBj3kvWwzacCN1PSFXHEqBLRcuFC8nrbYTognKfjol65GSNIn28SL5SjGf2efL2UBMwO1nWykl3M1mzxJ8ib/eZHkrG8j47RMbfA1WSKWcP8f9uSFtyZmZHZ8=);strokeColor=#5282ff;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;" vertex="1">
+          <mxGeometry height="200" width="960" x="80" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-k8s-1-icon" parent="1" style="shape=image;verticalLabelPosition=bottom;verticalAlign=top;imageAspect=0;aspect=fixed;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIiBmaWxsPSJub25lIj4mI3hhOzxwYXRoIGQ9Ik0wIDE2QzAgNy4xNjM0NCA3LjE2MzQ0IDAgMTYgMFYwQzI0LjgzNjYgMCAzMiA3LjE2MzQ0IDMyIDE2VjE2QzMyIDI0LjgzNjYgMjQuODM2NiAzMiAxNiAzMlYzMkM3LjE2MzQ0IDMyIDAgMjQuODM2NiAwIDE2VjE2WiIgZmlsbD0iIzUyODJGRiIvPiYjeGE7PHBhdGggZD0iTTExLjk5NSAyNEw3LjAwMDk4IDE3LjczOEw4Ljc4MTk4IDkuOTI3TDE2IDYuNDUzTDIzLjIxOCA5LjkyOEwyNC45OTkgMTcuNzM5TDIwLjAwNSAyNEgxMS45OTVaTTIwIDEzLjE5NkwxNS45OTkgMTAuODk5TDEyIDEzLjE5NlYxOC4xTDE2IDIwLjQwMUwyMCAxOC4xVjEzLjE5NlpNMTguNzggMTMuODk2SDE4Ljc4N0wxNiAxNS40OTlMMTMuMjE0IDEzLjg5NUgxMy4yMTlMMTUuOTk5IDEyLjI5OUwxOC43OCAxMy44OTZaIiBmaWxsPSJ3aGl0ZSIvPiYjeGE7PC9zdmc+;container=0;" value="" vertex="1">
+          <mxGeometry height="36" width="36" x="100" y="418" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-k8s-1-lbl" parent="1" style="verticalAlign=middle;align=left;overflow=width;vsdxID=7;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;" value="&lt;b&gt;Managed Service for Kubernetes&lt;/b&gt; — кластер &lt;b&gt;регион 1&lt;/b&gt;&lt;br&gt;Worker nodes в &lt;b&gt;AZ-a&lt;/b&gt; и &lt;b&gt;AZ-b&lt;/b&gt; (multi-AZ)" vertex="1">
+          <mxGeometry height="72" width="380" x="145" y="412" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-ns-1" parent="1" style="vsdxID=5;fillColor=none;gradientColor=none;shape=stencil(vVPLEoIgFP0aljgEVuPa6j+YRGUica6U9vdhUKk4LWzG3X0cOPdcOIilTclrgShpDOiLaGVmSsQOiFJZlQKksRFiR8TSXIMoQN+qzOU175F9dNX3/obOnSP9CUoeLktIFL8KJ4flcLZN8NhtRJiDwxsf7VwhQHjAhniCDvNONhi04UbqakSuOBQCWy6cK16MWk0rRB2U/XRKVgMlSRwl+1nyhWI+s0+Xs4KYgNvPtlBKuJvVniX4En+9yfxWVpDx2yc2+Bosl0o5fw77U0PakjMzOz4B);strokeColor=#ff5958;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;" vertex="1">
+          <mxGeometry height="160" width="440" x="560" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-ns-1-txt" parent="1" style="verticalAlign=middle;align=center;overflow=width;vsdxID=6;fillColor=none;gradientColor=none;strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;fontSize=11;" value="&lt;b&gt;InsureTech namespace&lt;/b&gt;&lt;br&gt;core-app, client-info,&lt;br&gt;ins-product-aggregator, ins-comp-settlement,&lt;br&gt;Ingress / Service (internal)" vertex="1">
+          <mxGeometry height="88" width="360" x="610" y="456" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-k8s-2-outline" parent="1" style="vsdxID=6;fillColor=none;gradientColor=none;shape=stencil(vVNdD4IgFP01POIQms1nq//BEpVF4q6U9u/DoFJxPdjm2/04cO65cBDL2oo3AlHSGtAX0cncVIgdEKWyrgRIYyPEjohlhQZRgr7VucsbPiCH6Krvww29O0eGE5Q8XJaSaPcqnByWw9k2wWNZRFMHhzc+SlwhQHhATDxBj3kvWwzacCN1PSFXHEqBLRcuFC8nrbYTognKfjol65GSNIn28SL5SjGf2efL2UBMwO1nWykl3M1mzxJ8ib/eZHkrG8j47RMbfA1WSKWcP8f9uSFtyZmZHZ8=);strokeColor=#5282ff;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;" vertex="1">
+          <mxGeometry height="200" width="960" x="1160" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-k8s-2-lbl" parent="1" style="verticalAlign=middle;align=left;overflow=width;vsdxID=7;fillColor=none;gradientColor=none;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);strokeColor=none;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;" value="&lt;b&gt;Managed Service for Kubernetes&lt;/b&gt; — кластер &lt;b&gt;регион 2&lt;/b&gt;&lt;br&gt;Идентичная топология сервисов, независимый control plane" vertex="1">
+          <mxGeometry height="72" width="480" x="1225" y="412" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-ns-2" parent="1" style="vsdxID=5;fillColor=none;gradientColor=none;shape=stencil(vVPLEoIgFP0aljgEVuPa6j+YRGUica6U9vdhUKk4LWzG3X0cOPdcOIilTclrgShpDOiLaGVmSsQOiFJZlQKksRFiR8TSXIMoQN+qzOU175F9dNX3/obOnSP9CUoeLktIFL8KJ4flcLZN8NhtRJiDwxsf7VwhQHjAhniCDvNONhi04UbqakSuOBQCWy6cK16MWk0rRB2U/XRKVgMlSRwl+1nyhWI+s0+Xs4KYgNvPtlBKuJvVniX4En+9yfxWVpDx2yc2+Bosl0o5fw77U0PakjMzOz4B);strokeColor=#ff5958;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;" vertex="1">
+          <mxGeometry height="160" width="440" x="1640" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-ns-2-txt" parent="1" style="verticalAlign=middle;align=center;overflow=width;vsdxID=6;fillColor=none;gradientColor=none;strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;fontSize=11;" value="&lt;b&gt;InsureTech namespace&lt;/b&gt;&lt;br&gt;Те же микросервисы&lt;br&gt;(актив-актив или смещение нагрузки через ALB)" vertex="1">
+          <mxGeometry height="72" width="360" x="1680" y="468" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-alb-to-k1" edge="1" parent="1" source="v2-tobe-alb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=classic;dashed=1;" target="v2-tobe-k8s-1-outline">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="300" />
+              <mxPoint x="560" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v2-tobe-alb-to-k2" edge="1" parent="1" source="v2-tobe-alb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=classic;dashed=1;" target="v2-tobe-k8s-2-outline">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="940" y="300" />
+              <mxPoint x="1640" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v2-tobe-note-k8s" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;" value="&lt;b&gt;Kubernetes:&lt;/b&gt; выбраны &lt;b&gt;отдельные Managed K8s-кластеры в каждом регионе&lt;/b&gt;, а не один «растянутый» кластер.&lt;br&gt;Обоснование: изоляция отказов площадки и сети, независимые control plane и релизы, отсутствие общего etcd-quorum между ЦОД; проще DR и соответствие RTO." vertex="1">
+          <mxGeometry height="100" width="480" x="80" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-note-failover" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;" value="&lt;b&gt;Failover (клиент → приложение):&lt;/b&gt; при падении подов/нод ALB исключает нездоровые target по health check; при деградации региона — переключение маршрутизации на второй регион (веса/geo). Цель &lt;b&gt;RTO ≤ 45 мин&lt;/b&gt; — за счёт заранее развёрнутого резерва и runbook автоматизации." vertex="1">
+          <mxGeometry height="100" width="450" x="600" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-note-shard" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" value="&lt;b&gt;Шардирование БД:&lt;/b&gt; &lt;font color=&quot;#0066CC&quot;&gt;&lt;b&gt;не применяется&lt;/b&gt;&lt;/font&gt; при объёме ~50 GB и текущей модели данных; достаточно HA-репликации, бэкапов и вертикального масштабирования managed-инстанса." vertex="1">
+          <mxGeometry height="72" width="500" x="1140" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-db-layer" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;fontSize=12;dashed=1;" value="&lt;b&gt;Слой данных (private / data subnet)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="380" width="2120" x="40" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-storage" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;verticalAlign=middle;fontSize=12;" value="&lt;b&gt;Object Storage&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;WAL / снимки / PITR&lt;br&gt;интервал ≤ &lt;b&gt;15 мин&lt;/b&gt; (RPO)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="200" x="360" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-edge-pg1" edge="1" parent="1" source="v2-tobe-pg-primary" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;startArrow=classic;strokeWidth=2;" target="v2-tobe-pg-sync">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-edge-pg1-lbl" connectable="0" parent="v2-tobe-edge-pg1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="sync" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v2-tobe-edge-pg2" edge="1" parent="1" source="v2-tobe-pg-sync" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;startArrow=none;strokeWidth=2;dashed=1;entryX=-0.015;entryY=0.482;entryDx=0;entryDy=0;entryPerimeter=0;" target="v2-tobe-pg-async">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="900" />
+              <mxPoint x="1030" y="898" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v2-tobe-edge-pg2-lbl" connectable="0" parent="v2-tobe-edge-pg2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" value="async replication" vertex="1">
+          <mxGeometry relative="1" x="-0.05" y="-2" as="geometry">
+            <mxPoint x="-3" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v2-tobe-edge-backup1" edge="1" parent="1" source="v2-tobe-pg-primary" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;startArrow=none;dashed=1;strokeColor=#6c8ebf;" target="v2-tobe-storage">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="1070" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v2-tobe-edge-backup2" edge="1" parent="1" source="v2-tobe-pg-sync" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;startArrow=none;dashed=1;strokeColor=#6c8ebf;" target="v2-tobe-storage">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="730" y="1070" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v2-tobe-note-db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;" value="&lt;b&gt;БД и RTO/RPO:&lt;/b&gt; Yandex &lt;b&gt;Managed Service for PostgreSQL&lt;/b&gt; (или self-managed &lt;b&gt;Patroni&lt;/b&gt;): primary + синхронная реплика во второй AZ региона 1 для HA; асинхронная реплика в регион 2 для географического DR.&lt;br&gt;&lt;b&gt;Резервное копирование:&lt;/b&gt; непрерывный архив WAL и снимки в Object Storage, точки восстановления не реже чем каждые 15 минут → &lt;b&gt;RPO ≤ 15 мин&lt;/b&gt;.&lt;br&gt;&lt;b&gt;RTO:&lt;/b&gt; автоматический failover внутри региона; при потере региона — промоут реплики в регионе 2 + переключение ALB (в пределах целевого окна)." vertex="1">
+          <mxGeometry height="80" width="1140" x="1000" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-edge-k1-db" edge="1" parent="1" source="v2-tobe-ns-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;startArrow=none;strokeWidth=1;dashed=1;strokeColor=#999999;" target="v2-tobe-pg-primary">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="620" />
+              <mxPoint x="580" y="620" />
+              <mxPoint x="580" y="800" />
+              <mxPoint x="300" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v2-tobe-edge-k2-db" edge="1" parent="1" source="v2-tobe-ns-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;startArrow=none;strokeWidth=1;dashed=1;strokeColor=#999999;" target="v2-tobe-pg-async">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1860" y="620" />
+              <mxPoint x="1800" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v2-tobe-legend-hc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;" value="&lt;b&gt;Все health check на схеме:&lt;/b&gt;&amp;nbsp;&lt;div&gt;(1) ALB → HTTP на backend-group к Ingress/подам;&amp;nbsp;&lt;/div&gt;&lt;div&gt;(2) Kubernetes readiness/liveness для каждого Deployment;&amp;nbsp;&lt;/div&gt;&lt;div&gt;(3) опционально проверка доступности БД из приложения (connection pool / отдельный health).&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="520" x="1140" y="16" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-bjFSJjY0-XdPSYtom2jS-2" parent="1" style="shape=image;verticalLabelPosition=bottom;verticalAlign=top;imageAspect=0;aspect=fixed;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIiBmaWxsPSJub25lIj4mI3hhOzxwYXRoIGQ9Ik0wIDE2QzAgNy4xNjM0NCA3LjE2MzQ0IDAgMTYgMFYwQzI0LjgzNjYgMCAzMiA3LjE2MzQ0IDMyIDE2VjE2QzMyIDI0LjgzNjYgMjQuODM2NiAzMiAxNiAzMlYzMkM3LjE2MzQ0IDMyIDAgMjQuODM2NiAwIDE2VjE2WiIgZmlsbD0iIzUyODJGRiIvPiYjeGE7PHBhdGggZD0iTTExLjk5NSAyNEw3LjAwMDk4IDE3LjczOEw4Ljc4MTk4IDkuOTI3TDE2IDYuNDUzTDIzLjIxOCA5LjkyOEwyNC45OTkgMTcuNzM5TDIwLjAwNSAyNEgxMS45OTVaTTIwIDEzLjE5NkwxNS45OTkgMTAuODk5TDEyIDEzLjE5NlYxOC4xTDE2IDIwLjQwMUwyMCAxOC4xVjEzLjE5NlpNMTguNzggMTMuODk2SDE4Ljc4N0wxNiAxNS40OTlMMTMuMjE0IDEzLjg5NUgxMy4yMTlMMTUuOTk5IDEyLjI5OUwxOC43OCAxMy44OTZaIiBmaWxsPSJ3aGl0ZSIvPiYjeGE7PC9zdmc+;container=0;" value="" vertex="1">
+          <mxGeometry height="36" width="36" x="1170" y="412" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-bjFSJjY0-XdPSYtom2jS-4" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="120" width="220" x="610" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-pg-sync" parent="v2-bjFSJjY0-XdPSYtom2jS-4" style="vsdxID=5;fillColor=none;gradientColor=none;shape=stencil(vVPLEoIgFP0aljgEVuPa6j+YRGUica6U9vdhUKk4LWzG3X0cOPdcOIilTclrgShpDOiLaGVmSsQOiFJZlQKksRFiR8TSXIMoQN+qzOU175F9dNX3/obOnSP9CUoeLktIFL8KJ4flcLZN8NhtRJiDwxsf7VwhQHjAhniCDvNONhi04UbqakSuOBQCWy6cK16MWk0rRB2U/XRKVgMlSRwl+1nyhWI+s0+Xs4KYgNvPtlBKuJvVniX4En+9yfxWVpDx2yc2+Bosl0o5fw77U0PakjMzOz4B);strokeColor=#ff5958;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;" vertex="1">
+          <mxGeometry height="120" width="220" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-pg-sync-txt" parent="v2-bjFSJjY0-XdPSYtom2jS-4" style="verticalAlign=middle;align=center;overflow=width;vsdxID=6;fillColor=none;gradientColor=none;strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;fontSize=11;" value="&lt;b&gt;Синхронная реплика&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Регион 1, AZ-b&lt;br&gt;авто-failover в паре (аналог &lt;b&gt;Patroni&lt;/b&gt; / &lt;b&gt;Managed PostgreSQL&lt;/b&gt;)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="88" width="180" x="20" y="18" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-bjFSJjY0-XdPSYtom2jS-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;" value="&lt;div&gt;&lt;b&gt;Условные обозначения:&lt;/b&gt;&lt;/div&gt;&lt;b&gt;ALB - Application Load Balancer&lt;/b&gt;&lt;div&gt;&lt;b&gt;AZ - Availability Zone&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;DR - DIsaster Recovery&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;RTO -&amp;nbsp;&lt;/b&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;b&gt;(Recovery Time Objective) — Целевое время восстановления,&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;b&gt;допустимое время простоя системы&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;b&gt;RPO (Recovery Point Objective) — Целевая точка восстановления,&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;b&gt;допустимый объем потери данных&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;b&gt;HA — High Availability (высокая доступность)&lt;/b&gt;&lt;br&gt;&lt;b&gt;PITR — Point-In-Time Recovery (восстановление на момент времени).&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="204" width="520" x="1670" y="16" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-bjFSJjY0-XdPSYtom2jS-7" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="120" width="240" x="1090" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-pg-async" parent="v2-bjFSJjY0-XdPSYtom2jS-7" style="vsdxID=5;fillColor=none;gradientColor=none;shape=stencil(vVPLEoIgFP0aljgEVuPa6j+YRGUica6U9vdhUKk4LWzG3X0cOPdcOIilTclrgShpDOiLaGVmSsQOiFJZlQKksRFiR8TSXIMoQN+qzOU175F9dNX3/obOnSP9CUoeLktIFL8KJ4flcLZN8NhtRJiDwxsf7VwhQHjAhniCDvNONhi04UbqakSuOBQCWy6cK16MWk0rRB2U/XRKVgMlSRwl+1nyhWI+s0+Xs4KYgNvPtlBKuJvVniX4En+9yfxWVpDx2yc2+Bosl0o5fw77U0PakjMzOz4B);strokeColor=#ff5958;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;" vertex="1">
+          <mxGeometry height="120" width="240" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-pg-async-txt" parent="v2-bjFSJjY0-XdPSYtom2jS-7" style="verticalAlign=middle;align=center;overflow=width;vsdxID=6;fillColor=none;gradientColor=none;strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;fontSize=11;" value="&lt;b&gt;Асинхронная реплика&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Регион 2 — DR / read&lt;br&gt;при недоступности региона 1&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="20" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-bjFSJjY0-XdPSYtom2jS-10" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="120" width="200" x="200" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-pg-primary" parent="v2-bjFSJjY0-XdPSYtom2jS-10" style="vsdxID=5;fillColor=none;gradientColor=none;shape=stencil(vVPLEoIgFP0aljgEVuPa6j+YRGUica6U9vdhUKk4LWzG3X0cOPdcOIilTclrgShpDOiLaGVmSsQOiFJZlQKksRFiR8TSXIMoQN+qzOU175F9dNX3/obOnSP9CUoeLktIFL8KJ4flcLZN8NhtRJiDwxsf7VwhQHjAhniCDvNONhi04UbqakSuOBQCWy6cK16MWk0rRB2U/XRKVgMlSRwl+1nyhWI+s0+Xs4KYgNvPtlBKuJvVniX4En+9yfxWVpDx2yc2+Bosl0o5fw77U0PakjMzOz4B);strokeColor=#ff5958;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;" vertex="1">
+          <mxGeometry height="120" width="200" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-tobe-pg-primary-txt" parent="v2-bjFSJjY0-XdPSYtom2jS-10" style="verticalAlign=middle;align=center;overflow=width;vsdxID=6;fillColor=none;gradientColor=none;strokeColor=none;spacingTop=-3;spacingBottom=-3;spacingLeft=-3;spacingRight=-3;points=[];labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;container=0;fontSize=12;" value="&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Master / Primary&lt;br&gt;(регион 1, AZ-a)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="72" width="150" x="25" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-addon-b2b-gw" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=middle;spacingLeft=8;fontSize=11;" value="&lt;b&gt;B2B API Gateway&lt;/b&gt; (или политики на ALB)&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Rate limiting &lt;b&gt;per partner&lt;/b&gt; (API key / mTLS), burst;&lt;br&gt;при превышении договорного RPS → &lt;b&gt;HTTP 429 с мониторингом и алертами на превышение лимита&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="88" width="260" x="1160" y="174" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-edge-partner-gw" edge="1" parent="1" source="v2-tobe-user-b2b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=classic;strokeColor=#b85450;" target="v2-addon-b2b-gw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v2-edge-gw-alb" edge="1" parent="1" source="v2-addon-b2b-gw" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=classic;strokeColor=#b85450;dashed=1;" target="v2-tobe-alb">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1120" y="220" />
+              <mxPoint x="1120" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v2-addon-bulkhead" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d0de;strokeColor=#996185;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=10;" value="&lt;b&gt;Bulkhead (разделение ресурсов)&lt;/b&gt;&lt;br&gt;Отдельная &lt;b&gt;backend-group / Ingress&lt;/b&gt; для partner API и &lt;b&gt;отдельный пул подов&lt;/b&gt; (или лимиты concurrency per pool), чтобы пик одного партнёра не забирал потоки/соединения у B2C и других партнёров." vertex="1">
+          <mxGeometry height="92" width="385" x="115" y="480" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

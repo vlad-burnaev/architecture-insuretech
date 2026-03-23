@@ -1,0 +1,54 @@
+Порядок проверки (после minikube start):
+
+  minikube addons enable metrics-server
+  kubectl apply -f deployment.yaml
+  kubectl apply -f service.yaml
+  kubectl apply -f hpa.yaml
+
+URL для Locust (хост в веб-UI Locust):
+
+  minikube service scaletestapp --url
+
+Нагрузка (macOS / Homebrew: не используйте системный pip — PEP 668):
+
+  cd Task2
+  python3 -m venv .venv
+  source .venv/bin/activate    # Windows: .venv\Scripts\activate
+  pip install -r requirements.txt
+  locust
+
+Альтернатива без venv:  brew install locust   (если формула есть в вашем brew)
+
+В другом терминале — снимок масштабирования (поды / HPA):
+
+  kubectl get hpa scaletestapp -w
+  kubectl get deployment scaletestapp -w
+  kubectl get pods -l app=scaletestapp
+
+Сохраните вывод или скриншот Kubernetes Dashboard в файл для сдачи (например hpa-scale-log.txt).
+
+Образ приложения: ghcr.io/yandex-practicum/scaletestapp:latest
+Источник: https://github.com/yandex-practicum/scaletestapp/pkgs/container/scaletestapp
+
+--- Apple Silicon (M1/M2/M3): ImagePullBackOff / «no matching manifest for linux/arm64» ---
+
+Образ собран под amd64. Сначала скачайте amd64 в локальный Docker, затем загрузите в Minikube и отключите повторный pull с реестра:
+
+  docker pull --platform linux/amd64 ghcr.io/yandex-practicum/scaletestapp:latest
+  minikube image load ghcr.io/yandex-practicum/scaletestapp:latest
+
+Если load не подхватывает образ, сохраните в tar:
+
+  docker save ghcr.io/yandex-practicum/scaletestapp:latest -o /tmp/scaletestapp.tar
+  minikube image load /tmp/scaletestapp.tar
+
+Дальше укажите Kubernetes не ходить в GHCR за образом (иначе снова проверка arm64):
+
+  kubectl patch deployment scaletestapp --type='json' -p='[{"op": "replace", "path": "/spec/template/spec/containers/0/imagePullPolicy", "value": "Never"}]'
+
+Перезапуск пода:
+
+  kubectl rollout restart deployment scaletestapp
+  kubectl get pods -l app=scaletestapp -w
+
+Если под всё равно не стартует (Exec format error) — в этом кластере нет эмуляции amd64; тогда Minikube на x86_64 VM/хосте или Colima: colima start --arch x86_64 (см. документацию Colima).
